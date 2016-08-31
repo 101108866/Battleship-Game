@@ -90,6 +90,9 @@ Public Class AIHardPlayer : Inherits AIPlayer
     Private _LastHit As New List(Of Target)()
     Private _CurrentTarget As Target
 
+    ''' <summary>
+    ''' Creates a new game
+   	''' </summary>
     Public Sub New(ByVal game As BattleShipsGame)
         MyBase.New(game)
     End Sub

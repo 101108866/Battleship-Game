@@ -4,8 +4,14 @@
 ''' </summary>
 Public Interface ISeaGrid
 
+	''' <summary>
+	''' Provides access to the width of the grid
+	''' </summary>
     ReadOnly Property Width() As Integer
 
+    ''' <summary>
+	''' Provides access to the height of the grid
+	''' </summary>
     ReadOnly Property Height() As Integer
 
     ''' <summary>

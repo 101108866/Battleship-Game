@@ -38,6 +38,10 @@ Public Class Player : Implements IEnumerable(Of Ship)
         End Set
     End Property
 
+    ''' <summary>
+    ''' Adds ship names to the seagrid
+    ''' </summary>
+    ''' <param name="controller"> The game controller </param>
     Public Sub New(ByVal controller As BattleShipsGame)
         _game = controller
 
@@ -81,6 +85,9 @@ Public Class Player : Implements IEnumerable(Of Ship)
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets value of whether or not all ships are destroyed
+    ''' </summary>
     Public ReadOnly Property IsDestroyed() As Boolean
         Get
             'Check if all ships are destroyed... -1 for the none ship
@@ -114,6 +121,9 @@ Public Class Player : Implements IEnumerable(Of Ship)
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets value of hits
+    ''' </summary>
     Public ReadOnly Property Hits() As Integer
         Get
             Return _hits
@@ -198,6 +208,9 @@ Public Class Player : Implements IEnumerable(Of Ship)
         Return result
     End Function
 
+    ''' <summary>
+    ''' Randomizes ship placement
+    ''' </summary>
     Public Overridable Sub RandomizeDeployment()
         Dim placementSuccessful As Boolean
         Dim heading As Direction

@@ -17,6 +17,9 @@ Public Class AIMediumPlayer : Inherits AIPlayer
     Private _CurrentState As AIStates = AIStates.Searching
     Private _Targets As New Stack(Of Location)()
 
+    ''' <summary>
+    ''' Creates a new controller
+    ''' </summary>
     Public Sub New(ByVal controller As BattleShipsGame)
         MyBase.New(controller)
     End Sub

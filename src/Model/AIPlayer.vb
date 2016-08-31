@@ -71,7 +71,9 @@ Public MustInherit Class AIPlayer : Inherits Player
         End Operator
     End Class
 
-
+    ''' <summary>
+    ''' Creates new game
+    ''' </summary>
     Public Sub New(ByVal game As BattleShipsGame)
         MyBase.New(game)
     End Sub
