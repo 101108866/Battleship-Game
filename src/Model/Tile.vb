@@ -85,6 +85,8 @@ Public Class Tile
     ''' <summary>
     ''' View is able to tell the grid what the tile is
     ''' </summary>
+    ''' <value> Type of tile to become </value>
+    ''' <returns> Tile type </returns>
     Public ReadOnly Property View() As TileView
         Get
             'if there is no ship in the tile

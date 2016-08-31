@@ -64,18 +64,32 @@ Public Class Ship
         End Get
     End Property
 
+    ''' <summary>
+    ''' The column location of the ship
+    ''' </summary>
+    ''' <value>The leftmost location of the ship</value>
+    ''' <returns>the column of the ship</returns>
     Public ReadOnly Property Column() As Integer
         Get
             Return _col
         End Get
     End Property
 
+    ''' <summary>
+    ''' The direction of the ship
+    ''' </summary>
+    ''' <value>Direction that the ship is pointed in</value>
+    ''' <returns>Direction of the ship</returns>
     Public ReadOnly Property Direction() As Direction
         Get
             Return _direction
         End Get
     End Property
 
+    ''' <summary>
+    ''' The row location of the ship
+    ''' </summary>
+    ''' <param name="ship">The name of the ship</param>
     Public Sub New(ByVal ship As ShipName)
         _shipName = ship
         _tiles = New List(Of Tile)()
@@ -102,6 +116,9 @@ Public Class Ship
         _tiles.Clear()
     End Sub
 
+    ''' <summary>
+    ''' Increases the number of hits by one
+    ''' </summary>
     Public Sub Hit()
         _hitsTaken = _hitsTaken + 1
     End Sub
@@ -110,12 +127,19 @@ Public Class Ship
     ''' IsDeployed returns if the ships is deployed, if its deplyed it has more than
     ''' 0 tiles
     ''' </summary>
+	''' <value>The true or false state of whether the ship has been deployed or not</value>
+    ''' <returns>Deployment state of ship</returns>
     Public ReadOnly Property IsDeployed() As Boolean
         Get
             Return _tiles.Count > 0
         End Get
     End Property
 
+    ''' <summary>
+    ''' Finds if the ship has been destroyed or not
+    ''' </summary>
+    ''' <value>The destoyed state of the ship</value>
+    ''' <returns>Destoyed state</returns>
     Public ReadOnly Property IsDestroyed() As Boolean
         Get
             Return Hits = Size
