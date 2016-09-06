@@ -109,6 +109,12 @@ Public Module GameController
         SwinGame.RefreshScreen()
     End Sub
 
+    ''' <summary>
+    ''' Plays hit sequence
+    ''' </summary>
+    ''' <param name="row">row of the tile</param>
+    ''' <param name="column">column of the tile</param>
+    ''' <param name="showAnimation">tells animation to show or not</param>
     Private Sub PlayHitSequence(ByVal row As Integer, ByVal column As Integer, ByVal showAnimation As Boolean)
         If showAnimation Then
             AddExplosion(row, column)
@@ -119,6 +125,12 @@ Public Module GameController
         DrawAnimationSequence()
     End Sub
 
+    ''' <summary>
+    ''' Plays miss sequence
+    ''' </summary>
+    ''' <param name="row">row of the tile</param>
+    ''' <param name="column">column of the tile</param>
+    ''' <param name="showAnimation">tells animation to show or not</param>
     Private Sub PlayMissSequence(ByVal row As Integer, ByVal column As Integer, ByVal showAnimation As Boolean)
         If showAnimation Then
             AddSplash(row, column)
