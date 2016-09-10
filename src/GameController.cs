@@ -272,7 +272,7 @@ public static class GameController
 		//Read incoming input events
 		SwinGame.ProcessEvents();
 
-		switch (CurrentState) {
+        switch (CurrentState) {
 			case GameState.ViewingMainMenu:
 				MenuController.HandleMainMenuInput();
 				break;
@@ -345,7 +345,7 @@ public static class GameController
 	/// <param name="state">the new game state</param>
 	public static void AddNewState(GameState state)
 	{
-		_state.Push(state);
+        _state.Push(state);
 		UtilityFunctions.Message = "";
 	}
 

@@ -58,10 +58,10 @@ static class HighScoreController
 	/// </remarks>
 	private static void LoadScores()
 	{
-		string filename = null;
-		filename = SwinGame.PathToResource("highscores.txt");
+		
+		string filename = SwinGame.PathToResource("highscores.txt");
 
-		StreamReader input = null;
+        StreamReader input = null;
 		input = new StreamReader(filename);
 
 		//Read in the # of scores
@@ -85,23 +85,26 @@ static class HighScoreController
 		input.Close();
 	}
 
-	/// <summary>
-	/// Saves the scores back to the highscores text file.
-	/// </summary>
-	/// <remarks>
-	/// The format is
-	/// # of scores
-	/// NNNSSS
-	/// 
-	/// Where NNN is the name and SSS is the score
-	/// </remarks>
-	private static void SaveScores()
-	{
-		string filename = null;
-		filename = SwinGame.PathToResource("highscores.txt");
+    /// <summary>
+    /// Saves the scores back to the highscores text file.
+    /// </summary>
+    /// <remarks>
+    /// The format is
+    /// # of scores
+    /// NNNSSS
+    /// 
+    /// Where NNN is the name and SSS is the score
+    /// </remarks>
 
-		StreamWriter output = null;
-		output = new StreamWriter(filename);
+
+    public static void SaveScores()
+	{
+
+   
+        string filename = SwinGame.PathToResource("highscores.txt");
+
+
+        StreamWriter output = new StreamWriter(filename);
 
 		output.WriteLine(_Scores.Count);
 
@@ -121,7 +124,7 @@ static class HighScoreController
 		const int SCORES_TOP = 80;
 		const int SCORE_GAP = 30;
 
-		if (_Scores.Count == 0)
+        if (_Scores.Count == 0)
 			LoadScores();
 
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
@@ -199,7 +202,9 @@ static class HighScoreController
 			_Scores.Add(s);
 			_Scores.Sort();
 
-			GameController.EndCurrentState();
+            SaveScores();
+
+            GameController.EndCurrentState();
 		}
 	}
 }
