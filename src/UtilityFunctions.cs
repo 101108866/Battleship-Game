@@ -180,8 +180,8 @@ static class UtilityFunctions
 		foreach (Ship s in thePlayer) {
 			if (s == null || !s.IsDeployed)
 				continue;
-			rowTop = top + (cellGap + cellHeight) * s.Row + SHIP_GAP;
-			colLeft = left + (cellGap + cellWidth) * s.Column + SHIP_GAP;
+			rowTop = top - 2 + (cellGap + cellHeight) * s.Row + SHIP_GAP;
+			colLeft = left - 3 + (cellGap + cellWidth) * s.Column + SHIP_GAP;
 
 			if (s.Direction == Direction.LeftRight) {
 				shipName = "ShipLR" + s.Size;
